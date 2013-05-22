@@ -813,4 +813,5 @@ static int __init vfp_init(void)
 	return 0;
 }
 
-late_initcall(vfp_init);
+
+core_initcall(vfp_init);
