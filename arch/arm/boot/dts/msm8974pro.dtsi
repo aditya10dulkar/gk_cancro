@@ -1572,6 +1572,7 @@
 	qcom,msm-bus,num-cases = <15>;
 	qcom,bus-control;
 	qcom,initial-pwrlevel = <3>;
+	qcom,bus-control;
 
 	/* Updated bus bandwidth requirements */
 	qcom,msm-bus,vectors-KBps =
