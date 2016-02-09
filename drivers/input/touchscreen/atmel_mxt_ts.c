@@ -5005,15 +5005,19 @@ static int fb_notifier_cb(struct notifier_block *self,
 {
 	struct fb_event *evdata = data;
 	int *blank;
+	static int u_blank;
 	struct mxt_data *mxt_data =
 		container_of(self, struct mxt_data, fb_notif);
 
 	if (evdata && evdata->data && event == FB_EVENT_BLANK && mxt_data) {
 		blank = evdata->data;
 		if (*blank == FB_BLANK_UNBLANK) {
+		   if(u_blank) {
 			dev_info(&mxt_data->client->dev, "##### UNBLANK SCREEN #####\n");
 			mxt_input_enable(mxt_data->input_dev);
+			}
 		} else if (*blank == FB_BLANK_POWERDOWN) {
+			u_blank = 1;
 			dev_info(&mxt_data->client->dev, "##### BLANK SCREEN #####\n");
 			mxt_input_disable(mxt_data->input_dev);
 		}
