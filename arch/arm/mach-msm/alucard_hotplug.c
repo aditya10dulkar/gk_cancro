@@ -727,10 +727,10 @@ static int __init alucard_hotplug_init(void)
 	unsigned int cpu;
 	int ret;
 	unsigned int hotplug_freq[NR_CPUS][2] = {
-		{0, 1497600},
-		{652800, 1190400},
-		{652800, 1190400},
-		{652800, 0}
+		{0, 1267200},
+		{729600, 1267200},
+		{729600, 1267200},
+		{729600, 0}
 	};
 	unsigned int hotplug_load[NR_CPUS][2] = {
 		{0, 60},
